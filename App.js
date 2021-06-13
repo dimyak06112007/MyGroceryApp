@@ -105,14 +105,14 @@ const [loginState, dispatch]=React.useReducer(loginReducer, initialLoginState)
               <Stack.Navigator>
               <Stack.Screen name = "Profile" component = {EditProfile}/>   
               <Stack.Screen name  = "Home" component = {HomeNavigator}/>
-              <Stack.Screen name  ="SignUp" component ={SignUp}></Stack.Screen>
               <Stack.Screen name = "Loginbtn" component = {TryAgain}/>
               <Stack.Screen name = 'UploadImg' component = {SelectAnImage}/>
               </Stack.Navigator>
             )
             :
             <Stack.Navigator>
-              <Stack.Screen name = "Login" component = {Login}></Stack.Screen>  
+              <Stack.Screen name = "Login" component = {Login}></Stack.Screen>
+              <Stack.Screen name  ="SignUp" component ={SignUp}></Stack.Screen> 
             </Stack.Navigator>
 }
           
