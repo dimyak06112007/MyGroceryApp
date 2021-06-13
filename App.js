@@ -63,7 +63,7 @@ const [loginState, dispatch]=React.useReducer(loginReducer, initialLoginState)
       // setisLoading(false)
       let userToken;
       userToken = null;
-      if(userName=== 'User' && password === 'mypass'){
+      if(userName=== 'U' && password === 'p'){
         userToken  ="TokenFromDatabase"
       }     
       console.log('user token', userToken)
@@ -103,8 +103,9 @@ const [loginState, dispatch]=React.useReducer(loginReducer, initialLoginState)
           
             {loginState.userToken !==null ? (
               <Stack.Navigator>
+               <Stack.Screen name  = "Home" component = {HomeNavigator}/> 
               <Stack.Screen name = "Profile" component = {EditProfile}/>   
-              <Stack.Screen name  = "Home" component = {HomeNavigator}/>
+              
               <Stack.Screen name = "Loginbtn" component = {TryAgain}/>
               <Stack.Screen name = 'UploadImg' component = {SelectAnImage}/>
               </Stack.Navigator>

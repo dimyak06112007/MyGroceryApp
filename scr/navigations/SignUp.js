@@ -15,6 +15,59 @@ import { createStackNavigator } from '@react-navigation/stack'
     const [password, setPassword] = useState("");
     const [name, setName]=useState("")
    
+    const [data, setData] = React.useState({
+      username: '',
+      password: '',
+      confirm_password: '',
+      check_textInputChange: false,
+      secureTextEntry: true,
+      confirm_secureTextEntry: true,
+  });
+
+  const textInputChange = (val) => {
+      if( val.length !== 0 ) {
+          setData({
+              ...data,
+              username: val,
+              check_textInputChange: true
+          });
+      } else {
+          setData({
+              ...data,
+              username: val,
+              check_textInputChange: false
+          });
+      }
+  }
+
+  const handlePasswordChange = (val) => {
+      setData({
+          ...data,
+          password: val
+      });
+  }
+
+  const handleConfirmPasswordChange = (val) => {
+      setData({
+          ...data,
+          confirm_password: val
+      });
+  }
+
+  const updateSecureTextEntry = () => {
+      setData({
+          ...data,
+          secureTextEntry: !data.secureTextEntry
+      });
+  }
+
+  const updateConfirmSecureTextEntry = () => {
+      setData({
+          ...data,
+          confirm_secureTextEntry: !data.confirm_secureTextEntry
+      });
+  }
+
     return (
       <View style={styles.container}>
   
@@ -23,7 +76,7 @@ import { createStackNavigator } from '@react-navigation/stack'
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
-            placeholder="Name"
+            placeholder="User Name"
             placeholderTextColor="#003f5c"
             onChangeText={(name) => setName(name)}
           />
@@ -45,6 +98,15 @@ import { createStackNavigator } from '@react-navigation/stack'
             secureTextEntry={true}
             onChangeText={(password) => setPassword(password)}
           />
+        </View >
+        <View style={styles.inputView}>
+        <TextInput 
+          placeholder="Confirm Your Password"
+          placeholderTextColor="#003f5c"
+          secureTextEntry={true}
+          style={styles.TextInput} 
+          onChangeText={(val) => handleConfirmPasswordChange(val)}
+          />
         </View>
         <View>
         <TouchableOpacity onPress={() => navigation.navigate('Login')} >
@@ -58,7 +120,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
    
         <TouchableOpacity style={styles.loginBtn}>
-          <Text style={styles.loginText}>LOGIN</Text>
+          <Text style={styles.loginText}>Sign Up</Text>
         </TouchableOpacity>
 
       </View>
