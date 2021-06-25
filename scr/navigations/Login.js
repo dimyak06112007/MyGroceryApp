@@ -9,9 +9,6 @@ import {
     TouchableOpacity,
   } from "react-native";
 import { AuthContext } from '../components/context';
-import IsLoginRight from './IsLoginRight';
-const InputEmail =()=> {};
-const InputPassword =()=> {};
 
 export default function Login({navigation}) {
 
