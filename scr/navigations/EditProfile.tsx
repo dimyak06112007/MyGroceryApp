@@ -9,19 +9,13 @@ import { StateOfUriContext } from './GlobalState';
 
 
 
-export default function EditProfile({ navigation, route }: { navigation: any, route: any }) {
+export default function EditProfile({ navigation}: { navigation: any},propss:any) {
     const { signOut } = React.useContext(AuthContext)
-    // const { ImageUri } = route.params;
-    // const ImageUriState = () => {
-    //     if (ImageUri !== undefined) {
-
-    //     }
-    // }
-
 
     return (
         <ScrollView style={{ flex: 1, backgroundColor: "yellow" }}>
-            <View style={{ flex: 1, backgroundColor: "purple" }}>
+            {/* later remove   height:1400 */}
+            <View style={{ flex: 1, backgroundColor: "purple",height:1400 }}> 
                 <View style={styles.container} >
                     <View style={styles.icon}>
 
@@ -63,6 +57,7 @@ export default function EditProfile({ navigation, route }: { navigation: any, ro
                 <StateOfUriContext.Consumer>
                     {data => <Text>Uri is {data.Uri}. UriPassed is {data.UriPassed ? `in editProfile is ${data.UriPassed}` : `in editProfile is ${data.UriPassed}`}</Text>}
                 </StateOfUriContext.Consumer>
+                <Text>uri propss '{propss.uri }'</Text>
                 <TouchableOpacity style={styles.SignOut}
                     onPress={() => { signOut() }}>
                     <Text>Sign Out</Text>

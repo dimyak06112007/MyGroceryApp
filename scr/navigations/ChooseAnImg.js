@@ -4,6 +4,7 @@ import { Button, StyleSheet, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
 import RNFetchBlob from 'rn-fetch-blob'
+import EditProfile from './EditProfile'
 import { StateOfUriContext } from './GlobalState'
 
 
@@ -74,9 +75,9 @@ export default function SelectAnImage({ navigation }) {
                             console.log('scan file success');
                             console.log(paths)
                             setGlobalPath(paths)
-                            .then(()=>{console.log("from the place i setGlobalPath", globalPath)}).catch((errorGlobal)=>{
-                                console.log('cant display log ' , errorGlobal)
-                            })
+                            console.log("from the place i setGlobalPath", globalPath)}).catch((errorGlobal)=>{
+                            console.log('cant display log ' , errorGlobal)
+                            
                             
                         })
                         .catch((err) => {
@@ -90,6 +91,7 @@ export default function SelectAnImage({ navigation }) {
         }
 
     }
+    <EditProfile uri={'hello'}></EditProfile>
 
     return (
 
@@ -122,6 +124,7 @@ export default function SelectAnImage({ navigation }) {
         </View>
 
     );
+
 }
 
 const styles = StyleSheet.create({

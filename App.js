@@ -15,6 +15,7 @@ import Mc from './scr/screens/Mc';
 import Ingredients from './scr/screens/Ingredients';
 import SushiyaMenu from './scr/screens/SushiyaMenu';
 import { Tabs } from './scr/navigations/tabs';
+import { ProductContext } from './scr/components/ProductContext';
 
 
 
@@ -36,7 +37,7 @@ export default function App() {
           ...prevState,
           userToken: action.token,
           isLoading: false,
-          
+
         };
       case 'LOGIN':
         return {
@@ -105,11 +106,15 @@ export default function App() {
     )
   }
   return (
+
     <AuthContext.Provider value={authContext}>
+
       <NavigationContainer>
 
         {loginState.userToken === null ? (
+
           <Stack.Navigator>
+
             <Stack.Screen name="Tabs" component={Tabs} />
             <Stack.Screen name="Home" component={HomeNavigator} />
             <Stack.Screen name="Profile" component={EditProfile} />
@@ -121,6 +126,7 @@ export default function App() {
             <Stack.Screen name="SushiyaMenu" component={SushiyaMenu} />
 
           </Stack.Navigator>
+
         )
           :
           <Stack.Navigator>
@@ -131,6 +137,7 @@ export default function App() {
         }
 
       </NavigationContainer>
+
     </AuthContext.Provider>
   )
 }
