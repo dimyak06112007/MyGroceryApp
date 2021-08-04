@@ -7,19 +7,19 @@ import { View } from "react-native"
 export default function SushiyaMenu({ navigation }: { navigation: any }) {
   const [imgAndName, setimgAndName] = useState([
     {
-        ImagePath: require('D:/MyAwesomeReactNativeApps/Store/scr/assets/images/SushiyaMenuImages/MakiRoll.jpg'),
+        ImagePath: require('../assets/images/SushiyaMenuImages/MakiRoll.jpg'),
         NameOfDish: 'Maki Roll',
       Prise: "75₴",
         Gram: 110
     },
     {
-        ImagePath: require('D:/MyAwesomeReactNativeApps/Store/scr/assets/images/SushiyaMenuImages/Philadelphia.jpg'),
+        ImagePath: require('../assets/images/SushiyaMenuImages/Philadelphia.jpg'),
         NameOfDish: 'Philadelphia',
       Prise: "225₴",
       Gram: 290
     },
     {
-      ImagePath: require('D:/MyAwesomeReactNativeApps/Store/scr/assets/images/SushiyaMenuImages/SakuraRoll.jpg'),
+      ImagePath: require('../assets/images/SushiyaMenuImages/SakuraRoll.jpg'),
       NameOfDish: 'Sakura Roll',
       Prise: "180₴",
       Gram: 90

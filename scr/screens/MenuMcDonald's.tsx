@@ -7,12 +7,12 @@ import { View } from "react-native"
 export default function McMenu({ navigation }: { navigation: any }) {
     const [imgAndName, setimgAndName] = useState([
         {
-            ImagePath: require('D:/MyAwesomeReactNativeApps/Store/scr/assets/images/menuImages/t-mcdonalds-Egg-McMuffin.jpg'),
+            ImagePath: require('../assets/images/menuImages/t-mcdonalds-Egg-McMuffin.jpg'),
             NameOfDish: 'Egg Muffin',
             Prise:"100₴"
         },
         {
-            ImagePath: require('D:/MyAwesomeReactNativeApps/Store/scr/assets/images/menuImages/t-mcdonalds-Chicken-McNuggets-4pc.jpg'),
+            ImagePath: require('../assets/images/menuImages/t-mcdonalds-Chicken-McNuggets-4pc.jpg'),
             NameOfDish: 'Chicken Nuggets',
             Prise:"70₴"
         },
